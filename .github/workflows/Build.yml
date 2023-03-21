@@ -31,5 +31,5 @@ jobs:
  
     - name: Build
       working-directory: ./src
-      run: dotnet pack --configuration Release /p:PackageVersion=1.0.${{github.run_number}}+sha.${{steps.version.outputs.shortsha}}
+      run: dotnet pack --configuration Release /p:PackageVersion=${{steps.version.outputs.semver}}
     
