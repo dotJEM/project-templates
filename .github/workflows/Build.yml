@@ -22,7 +22,7 @@ jobs:
       id: version
       run: |
         content=`cat ./VERSION`
-        echo content
+        echo ${content}
         echo "template=content" >> $GITHUB_OUTPUT 
  
     - name: Set short git commit SHA
