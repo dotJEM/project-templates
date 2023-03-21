@@ -30,9 +30,14 @@ jobs:
         echo "shortsha=$shortsha"
         echo "semver=${template//build/$build}+sha.$shortsha" >> $GITHUB_OUTPUT
         echo "semver=${template//build/$build}+sha.$shortsha"
-        
  
-    - name: Build
+    - name: Package Templates
       working-directory: ./src
-      run: dotnet pack --configuration Release /p:PackageVersion=${{steps.version.outputs.semver}}
+      run:  dotnet pack --configuration Release /p:PackageVersion=${{steps.version.outputs.semver}}
+        dotnet nuget push *.nupkg -k ${{ secrets.NUGET_ORG_API_KEY }} -s https://api.nuget.org/v3/index.json
+        dotnet nuget push ./**/.nupkg --skip-duplicate 
+      
+    - name: Publish Templates
+      working-directory: ./src
+      run: dotnet nuget push **/*.nupkg -k ${{ secrets.NUGET_API_KEY }}
     
