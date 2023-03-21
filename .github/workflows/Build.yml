@@ -21,11 +21,12 @@ jobs:
     - name: Calculate Version Parameters
       id: version
       run: |
+        build=${{github.run_number}}
         template=`cat ./VERSION`
         shortsha=$(git rev-parse --short ${{ github.sha }})
         echo "template=$template" >> $GITHUB_OUTPUT 
         echo "shortsha=$shortsha" >> $GITHUB_OUTPUT
-        echo "semver=${template//build/${{github.run_number}}}+sha.$shortsha"
+        echo "semver=${template//build/$build}+sha.$shortsha"
         
  
     - name: Build
