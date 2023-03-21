@@ -22,7 +22,7 @@ jobs:
       id: vars
       run: |
         calculatedSha=$(git rev-parse --short ${{ github.sha }})
-        echo "::set-output name=short_sha::$calculatedSha"
+        echo "shortsha=$calculatedSha" >> $GITHUB_OUTPUT
 
     - name: Build
       working-directory: ./src
