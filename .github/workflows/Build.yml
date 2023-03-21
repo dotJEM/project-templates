@@ -25,7 +25,7 @@ jobs:
         shortsha=$(git rev-parse --short ${{ github.sha }})
         echo "template=$template" >> $GITHUB_OUTPUT 
         echo "shortsha=$shortsha" >> $GITHUB_OUTPUT
-        echo "semver=${template//build/$shortsha}+sha.$shortsha"
+        echo "semver=${template//build/${{github.run_number}}}+sha.$shortsha"
         
  
     - name: Build
