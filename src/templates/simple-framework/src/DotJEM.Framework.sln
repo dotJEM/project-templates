@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.4.33122.133
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Systematic.ProductName.Framework.Test", "Systematic.ProductName.Framework.Test\Systematic.ProductName.Framework.Test.csproj", "{FC6B24FE-48AF-4DD3-90A5-D04A53EFD2CB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DotJEM.Framework.Test", "DotJEM.Framework.Test\DotJEM.Framework.Test.csproj", "{FC6B24FE-48AF-4DD3-90A5-D04A53EFD2CB}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Systematic.ProductName.Framework", "Systematic.ProductName.Framework\Systematic.ProductName.Framework.csproj", "{84B97F58-4FF5-4A68-B5BD-F8AC5D84383D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DotJEM.Framework", "DotJEM.Framework\DotJEM.Framework.csproj", "{84B97F58-4FF5-4A68-B5BD-F8AC5D84383D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
