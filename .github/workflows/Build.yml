@@ -25,7 +25,10 @@ jobs:
         template=`cat ./VERSION`
         shortsha=$(git rev-parse --short ${{ github.sha }})
         echo "template=$template" >> $GITHUB_OUTPUT 
+        echo "template=$template"
         echo "shortsha=$shortsha" >> $GITHUB_OUTPUT
+        echo "shortsha=$shortsha"
+        echo "semver=${template//build/$build}+sha.$shortsha" >> $GITHUB_OUTPUT
         echo "semver=${template//build/$build}+sha.$shortsha"
         
  
