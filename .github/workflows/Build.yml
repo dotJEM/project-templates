@@ -18,20 +18,17 @@ jobs:
       with:
         dotnet-version: 7.x.x
  
-    - name: Fetch Version Template
+    - name: Calculate Version Parameters
       id: version
       run: |
-        content=`cat ./VERSION`
-        echo ${content}
-        echo "template=content" >> $GITHUB_OUTPUT 
+        template=`cat ./VERSION`
+        shortsha=$(git rev-parse --short ${{ github.sha }})
+        echo "template=$template" >> $GITHUB_OUTPUT 
+        echo "shortsha=$shortsha" >> $GITHUB_OUTPUT
+        echo "semver=${$template//{build}/$shortsha}+sha.$shortsha"
+        
  
-    - name: Set short git commit SHA
-      id: vars
-      run: |
-        calculatedSha=$(git rev-parse --short ${{ github.sha }})
-        echo "shortsha=$calculatedSha" >> $GITHUB_OUTPUT
-
     - name: Build
       working-directory: ./src
-      run: dotnet pack --configuration Release /p:PackageVersion=1.0.${{github.run_number}}+sha.${{steps.vars.outputs.shortsha}}
+      run: dotnet pack --configuration Release /p:PackageVersion=1.0.${{github.run_number}}+sha.${{steps.version.outputs.shortsha}}
     
