@@ -18,6 +18,13 @@ jobs:
       with:
         dotnet-version: 7.x.x
  
+    - name: Fetch Version Template
+      id: version
+      run: |
+        content=`cat ./VERSION`
+        echo content
+        echo "template=content" >> $GITHUB_OUTPUT 
+ 
     - name: Set short git commit SHA
       id: vars
       run: |
