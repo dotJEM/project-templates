@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <PackageType>Template</PackageType>
-    <PackageVersion>1.0</PackageVersion>
+    <PackageVersion></PackageVersion>
     <PackageId>DotJEM.DotNet.Templates</PackageId>
     <Title>DotJEM Templates for .NET Projects</Title>
     <Authors>Jens Melgaard</Authors>
