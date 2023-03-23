@@ -37,9 +37,9 @@
 			"datatype": "choice",
 			"choices": [
 				{ "choice": "appveyor", "description": "Use AppVeyor as build system." },
-				{ "choice": "gh-actions", "description": "Use GitHub actions as build system." }
+				{ "choice": "gha", "description": "Use GitHub actions as build system." }
 			],
-			"defaultValue": "appveyor"
+			"defaultValue": "gha"
 		}
 	},
 	"sources": [
@@ -50,7 +50,8 @@
 						"**/.git/**",
 						"**/.vs/**",
 						"appveyor.yml",
-						"**/.github"
+						"**/.github",
+						"VERSION"
 					]
 				},
 				{
@@ -60,9 +61,10 @@
 					]
 				},
 				{
-					"condition": "(BuildType==\"gh-actions\")",
+					"condition": "(BuildType==\"gha\")",
 					"include": [
-						"**/.github"
+						"**/.github",
+						"VERSION"
 					]
 				}
 			]
