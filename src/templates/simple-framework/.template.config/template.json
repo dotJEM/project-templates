@@ -13,6 +13,13 @@
 	"sourceName": "DotJEM.Framework",
 	"preferNameDirectory": true,
 	"shortName": "dotjem-framework",
+        "guids": [
+            "9A19103F-16F7-4668-BE54-9A1E7A4F7556",
+            "FC6B24FE-48AF-4DD3-90A5-D04A53EFD2CB",
+            "84B97F58-4FF5-4A68-B5BD-F8AC5D84383D",
+            "3FBB7E50-C388-4CEB-8002-D76AC76EB9F4"
+        ],
+	
 	"tags": {
 		"language": "C#",
 		"type": "project"
