@@ -12,7 +12,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Systematic.ProductName.Framework\Systematic.ProductName.Framework.csproj" />
+    <ProjectReference Include="..\DotJEM.Framework\DotJEM.Framework.csproj" />
   </ItemGroup>
 
 </Project>
