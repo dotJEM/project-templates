@@ -21,14 +21,21 @@ jobs:
     - name: Calculate Version Parameters
       id: version
       run: |
+        build=${{github.run_number}}
         template=`cat ./VERSION`
         shortsha=$(git rev-parse --short ${{ github.sha }})
         echo "template=$template" >> $GITHUB_OUTPUT 
+        echo "template=$template"
         echo "shortsha=$shortsha" >> $GITHUB_OUTPUT
-        echo "semver=${template//build/$shortsha}+sha.$shortsha"
-        
+        echo "shortsha=$shortsha"
+        echo "semver=${template//build/$build}+sha.$shortsha" >> $GITHUB_OUTPUT
+        echo "semver=${template//build/$build}+sha.$shortsha"
  
-    - name: Build
+    - name: Package Templates
       working-directory: ./src
-      run: dotnet pack --configuration Release /p:PackageVersion=1.0.${{github.run_number}}+sha.${{steps.version.outputs.shortsha}}
+      run:  dotnet pack --configuration Release /p:PackageVersion=${{steps.version.outputs.semver}}
+      
+    - name: Publish Templates
+      working-directory: ./src
+      run: dotnet nuget push **/*.nupkg -k ${{ secrets.NUGET_API_KEY }} -s https://api.nuget.org/v3/index.json --skip-duplicate 
     

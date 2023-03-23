@@ -8,6 +8,7 @@
     <Authors>Jens Melgaard</Authors>
     <Description></Description>
     <PackageTags>dotnet-new;templates</PackageTags>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
 
     <TargetFramework>netstandard2.0</TargetFramework>
 
