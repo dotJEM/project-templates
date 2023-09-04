@@ -9,7 +9,7 @@
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
     <Authors>DotJEM</Authors>
     <Copyright>Copyright © DotJEM 2023</Copyright>
-    <Description>Builder for JSON Data Contract Resolvers</Description>
+    <Description></Description>
     <IncludeSymbols>False</IncludeSymbols>
     <SymbolPackageFormat>snupkg</SymbolPackageFormat>
   
