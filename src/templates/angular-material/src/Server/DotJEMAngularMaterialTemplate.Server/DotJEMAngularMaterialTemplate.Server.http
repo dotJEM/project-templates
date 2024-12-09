@@ -1,0 +1,6 @@
+@DotJEMAngularMaterialTemplate.Server_HostAddress = http://localhost:5121
+
+GET {{DotJEMAngularMaterialTemplate.Server_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

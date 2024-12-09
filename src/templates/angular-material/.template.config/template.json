@@ -1,0 +1,82 @@
+{
+	"$schema": "http://json.schemastore.org/template",
+	"author": "Jens Melgaard",
+	"classifications": [
+		"DotJEM",
+		"ASPNET",
+		"Angular",
+		"Material",
+		"Spa"
+	],
+	"identity": "DotJEMAngularMaterial",
+	"name": "DotJEM ASP.NET Core with Angular Meterial Solution",
+	"sourceName": "DotJEMAngularMaterialTemplate",
+	"preferNameDirectory": true,
+	"shortName": "dotjem-angular-material",
+        "guids": [
+            "FAE04EC0-301F-11D3-BF4B-00C04F79EFBC",
+            "54A90642-561A-4BB1-A94E-469ADEE60C69",
+            "2150E333-8FDC-42A3-9474-1A3956D46DE8D",
+            "2150E333-8FDC-42A3-9474-1A3956D46DE8",
+			"4BDFBC98-200C-4207-945B-D2E315A983E1",
+			"0297ABA2-8B54-40B5-B40C-AAFB74621C84",
+			"2773319C-311A-4C79-AA6A-F148DA66957A",
+			"38EE4CF5-DFE3-48D2-A032-B3001F455469"
+        ],
+	
+	"tags": {
+		"language": "C#",
+		"type": "project"
+	},
+	
+	"symbols": {
+		"Framework": {
+			"type": "parameter",
+			"description": "The target framework for the project.",
+			"datatype": "choice",
+			"choices": [
+				{ "choice": "net8.0", "description": "Target net8.0" },
+				{ "choice": "net9.0", "description": "Target net9.0" }
+			],
+			"replaces": "net9.0",
+			"defaultValue": "net9.0"
+		},
+		"BuildType": {
+			"type": "parameter",
+			"description": "The build system to use.",
+			"datatype": "choice",
+			"choices": [
+				{ "choice": "none", "description": "Configure your own build." },
+				{ "choice": "gha", "description": "Use GitHub actions as build system." }
+			],
+			"defaultValue": "gha"
+		},
+		"AngularComponentPrefix": {
+			"type": "parameter",
+			"description": "The component prefix to use for Angular Components and Directives.",
+			"replaces": "$componentPrefix",
+			"defaultValue": "app"
+		}
+	},
+	"sources": [
+		{
+			"modifiers": [
+				{
+					"exclude": [
+						"**/.git/**",
+						"**/.vs/**",
+						"**/.github",
+						"VERSION"
+					]
+				},
+				{
+					"condition": "(BuildType==\"gha\")",
+					"include": [
+						"**/.github",
+						"VERSION"
+					]
+				}
+			]
+		}
+	]
+}
